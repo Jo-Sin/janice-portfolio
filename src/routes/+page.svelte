@@ -9,10 +9,10 @@
 		<img src="/cat.jpg" alt="hero" class="w-full h-full object-cover" />
 	</div>
 	<div
-		class="md:w-1/2 md:h-[calc(100vh-96px)] flex flex-col justify-center p-12 {$styling.bgPrimaryLight} text-gray-800"
+		class="md:w-1/2 md:h-[calc(100vh-96px)] flex flex-col justify-center p-12 {$styling.bgPrimaryLight} bg-opacity-50 text-gray-800"
 	>
-		<h1 class="text-3xl {$styling.textPrimary}">Hi! I'm Janice Saji</h1>
-		<p class="my-8">
+		<h1 class="text-4xl font-bold {$styling.textSecondary}">Hi! I'm Janice Saji</h1>
+		<p class="my-8 text-lg font-bold {$styling.textPrimary}">
 			I’m a designer & lettering artist with a knack for marketing who loves helping creatives and
 			brands get more eyes on their work.
 		</p>

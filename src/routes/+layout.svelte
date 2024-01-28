@@ -10,7 +10,10 @@
 		bgPrimaryLight: 'bg-[#9DC5BB]',
 		hoverBgPrimaryLight: 'hover:bg-[#9DC5BB]',
 		textPrimaryLight: 'bg-[#9DC5BB]',
-		bgSecondary: 'bg-[#FFD639]'
+		bgSecondary: 'bg-[#ca8a04]',
+		textSecondary: 'text-[#ca8a04]',
+		hoverBgSecondary: 'hover:bg-[#ca8a04]',
+		borderSecondary: 'border-[#ca8a04]'
 	});
 
 	setContext('styling', styling);
@@ -19,11 +22,11 @@
 
 	let menuOptions = [
 		{ url: '/', name: 'Home' },
-		{ url: '/', name: 'About' },
-		{ url: '/', name: 'Work' },
-		{ url: '/', name: 'Blog' },
-		{ url: '/', name: 'Mailing list' },
-		{ url: '/', name: 'Contact' }
+		{ url: '', name: 'About' },
+		{ url: '/work', name: 'Work' },
+		{ url: '', name: 'Blog' },
+		{ url: '', name: 'Mailing list' },
+		{ url: '', name: 'Contact' }
 	];
 
 	let updateColor = () => {
@@ -33,7 +36,9 @@
 
 <header class="p-4 {$styling.bgPrimary} text-gray-100">
 	<nav class="flex justify-between h-16 mx-auto">
-		<a href="/" aria-label="Back to homepage" class="flex items-center p-2"> Janice </a>
+		<a href="/" aria-label="Back to homepage" class="flex items-center p-2 text-4xl ml-8">
+			Janice
+		</a>
 		<ul class="items-stretch hidden space-x-3 md:flex">
 			{#each menuOptions as option}
 				<li class="flex">
