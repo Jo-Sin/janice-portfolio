@@ -1,3 +1,33 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.primary-background {
+	background-color: var(--color-primary);
+}
+.primary-font {
+	color: var(--color-primary) !important;
+}
+
+.secondary-background {
+	background-color: var(--color-secondary-50);
+}
+.hover-secondary-background:hover {
+	background-color: var(--color-secondary);
+}
+
+.tertiary-background {
+	background-color: var(--color-tertiary);
+}
+.hover-tertiary-background:hover {
+	background-color: var(--color-tertiary);
+}
+.hover-tertiary-background-30:hover {
+	background-color: var(--color-tertiary-30);
+}
+.tertiary-font {
+	color: var(--color-tertiary);
+}
+.tertiary-border {
+	border-color: var(--color-tertiary);
+}

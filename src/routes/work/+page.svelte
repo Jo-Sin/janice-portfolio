@@ -92,7 +92,7 @@
 	];
 </script>
 
-<main class={$styling.textPrimary}>
+<main class="primary-font">
 	<section
 		class="flex flex-col items-center justify-center bg-[url('/paper.jpg')] bg-cover min-h-60 p-8"
 	>
@@ -101,15 +101,11 @@
 	</section>
 
 	{#each workSections as workSection, i}
-		<section
-			class="flex flex-col items-center p-8 {i % 2 == 1
-				? $styling.bgPrimaryLight
-				: ''} bg-opacity-50"
-		>
-			<h2 class="font-bold text-3xl">{workSection.title}</h2>
+		<section class="flex flex-col items-center p-8 {i % 2 == 1 ? 'secondary-background' : ''}">
+			<h2 class="font-bold text-3xl text-center">{workSection.title}</h2>
 			<div class="my-8 w-full flex flex-wrap gap-4 justify-center">
 				{#each workSection.content as item}
-					<div class="w-full md:w-1/4 {$styling.hoverBgSecondary} hover:bg-opacity-30 p-1">
+					<div class="w-full md:w-1/4 hover-tertiary-background-30 hover:bg-opacity-30 p-1">
 						<img src={item.image} alt="item" class="w-[100%] h-[200px] object-cover" />
 						<h3 class="font-bold text-xl py-2">{item.title}</h3>
 						<p class="line-clamp-3 md:line-clamp-5">{item.description}</p>
@@ -119,7 +115,7 @@
 			{#if workSection.pageUrl}
 				<a
 					href={workSection.pageUrl}
-					class="{$styling.borderSecondary} border-2 {$styling.textSecondary} {$styling.hoverBgSecondary} hover:text-white py-3.5 px-7"
+					class="tertiary-border border-2 tertiary-font hover-tertiary-background hover:text-white py-3.5 px-7"
 					>See All</a
 				>
 			{/if}
