@@ -11,5 +11,17 @@ export const DEFAULT_SAVED_COLORS: SavedColorType[] = [
         primary: '#136F63',
         secondary: '#9BC1BC',
         tertiary: '#AA0E13'
+    },
+    {
+        name: 'Option 2',
+        primary: '#00A676',
+        secondary: '#D1F0D5',
+        tertiary: '#FFA69E'
+    },
+    {
+        name: 'Option 3',
+        primary: '#00A676',
+        secondary: '#D1F0D5',
+        tertiary: '#FFD21F'
     }
 ];
