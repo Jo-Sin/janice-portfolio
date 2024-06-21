@@ -1,9 +1,3 @@
-<script>
-	import { getContext } from 'svelte';
-
-	const styling = getContext('styling');
-</script>
-
 <main class="md:flex">
 	<div class="md:w-1/2 md:h-[calc(100vh-96px)]">
 		<img src="/cat.jpg" alt="hero" class="w-full h-full object-cover" />
@@ -16,7 +10,7 @@
 			I’m a designer & lettering artist with a knack for marketing who loves helping creatives and
 			brands get more eyes on their work.
 		</p>
-		<button class="tertiary-background hover:bg-yellow-700 text-white py-3.5 px-7 w-max"
+		<button class="tertiary-background hover-tertiary-background-50 text-white py-3.5 px-7 w-max"
 			>Find out more</button
 		>
 	</div>

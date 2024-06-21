@@ -22,8 +22,8 @@
 .hover-tertiary-background:hover {
 	background-color: var(--color-tertiary);
 }
-.hover-tertiary-background-30:hover {
-	background-color: var(--color-tertiary-30);
+.hover-tertiary-background-50:hover {
+	background-color: var(--color-tertiary-50);
 }
 .tertiary-font {
 	color: var(--color-tertiary);
