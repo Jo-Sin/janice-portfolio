@@ -17,7 +17,7 @@
 
 	let menuOptions = [
 		{ url: '/', name: 'Home' },
-		{ url: '', name: 'About' },
+		{ url: '/about', name: 'About' },
 		{ url: '/work', name: 'Work' },
 		{ url: '', name: 'Blog' },
 		{ url: '', name: 'Mailing list' },

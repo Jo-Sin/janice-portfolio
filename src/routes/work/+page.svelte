@@ -89,13 +89,6 @@
 </script>
 
 <main class="primary-font">
-	<section
-		class="flex flex-col items-center justify-center bg-[url('/paper.jpg')] bg-cover min-h-60 p-8"
-	>
-		<h1 class="font-bold text-3xl">Work</h1>
-		<p class="mt-4">Some of the things I've done</p>
-	</section>
-
 	{#each workSections as workSection, i}
 		<section class="flex flex-col items-center p-8 {i % 2 == 1 ? 'secondary-background' : ''}">
 			<h2 class="font-bold text-3xl text-center">{workSection.title}</h2>
