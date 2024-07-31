@@ -18,3 +18,15 @@ type ColorOptionsType = {
     color: string,
     update: (event: Event) => void
 }
+
+type WorkItemContent = {
+    title: string,
+    image?: string,
+    description?: string,
+    link?: string
+}
+
+type WorkItem = {
+    title: string,
+    content: WorkItemContent[]
+}
