@@ -1,49 +1,5 @@
 <script lang="ts">
 	import { WORK_DATA } from '$lib/constants/WorkData';
-
-	const workSecstions: WorkItem[] = [
-		{
-			title: 'Content writing',
-			content: [
-				{
-					image: 'https://cdn.pixabay.com/photo/2024/01/15/19/40/animal-8510775_1280.jpg',
-					title: 'Item 1',
-					description: 'Lorem ipsum dolor sit amet'
-				},
-				{
-					image: 'https://cdn.pixabay.com/photo/2024/01/18/14/26/white-8517052_1280.jpg',
-					title: 'Item 2',
-					description:
-						'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sed ex ut sapien rutrum elementum eget id magna. Aliquam erat volutpat. Nunc faucibus augue urna, sed tempus libero lobortis eget. Mauris vitae velit sapien. In sollicitudin pulvinar dictum. Nulla id eros dignissim, lobortis turpis in, tristique ex. Aliquam vitae odio nulla.'
-				},
-				{
-					image: 'https://cdn.pixabay.com/photo/2023/05/25/07/38/antarctica-8016562_1280.jpg',
-					title: 'Item 3',
-					description: 'Lorem ipsum dolor sit amet'
-				}
-			]
-		},
-		{
-			title: 'Video',
-			content: [
-				{
-					image: 'https://cdn.pixabay.com/photo/2024/01/15/19/40/animal-8510775_1280.jpg',
-					title: 'Item 1',
-					description: 'Lorem ipsum dolor sit amet'
-				}
-			]
-		},
-		{
-			title: 'Radio',
-			content: [
-				{
-					image: 'https://cdn.pixabay.com/photo/2024/01/15/19/40/animal-8510775_1280.jpg',
-					title: 'Item 1',
-					description: 'Lorem ipsum dolor sit amet'
-				}
-			]
-		}
-	];
 </script>
 
 <main class="primary-font">

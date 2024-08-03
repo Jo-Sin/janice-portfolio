@@ -1,6 +1,6 @@
 <main class="md:flex">
 	<div class="md:w-1/2 md:h-[calc(100vh-96px)]">
-		<img src="/home-girl.jpeg" alt="hero" class="w-full h-full object-cover" />
+		<img src="/home-girl.webp" alt="hero" class="w-full h-full object-cover" />
 	</div>
 	<div
 		class="secondary-background md:w-1/2 md:h-[calc(100vh-96px)] flex flex-col gap-4 justify-center p-12 primary-font"

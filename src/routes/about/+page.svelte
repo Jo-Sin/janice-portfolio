@@ -2,7 +2,7 @@
 	<h2 class="font-bold text-3xl text-center m-8">About Me</h2>
 	<img
 		width="300px"
-		src="/about-image.jpg"
+		src="/about-image.webp"
 		alt="About Avatar"
 		class="float-right rounded-full m-12"
 	/>
