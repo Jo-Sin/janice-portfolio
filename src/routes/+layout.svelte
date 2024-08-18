@@ -1,55 +1,25 @@
 <script lang="ts">
+	import ColorModal from '$lib/components/ColorModal.svelte';
+	import SavedColorsModal from '$lib/components/SavedColorsModal.svelte';
+	import { DEFAULT_COLORS } from '$lib/constants/SelectedColors';
+	import { selectedColorsStore } from '$lib/stores/SelectedColors';
 	import '../app.css';
 
-	const styling: Styling = {
-		colorPrimary: '#006D77',
-		colorSecondary: '#9DC5BB',
-		colorSecondary50: '#9DC5BB80',
-		colorTertiary: '#ca8a04',
-		colorTertiary30: '#ca8a044d'
-	};
+	let styling = DEFAULT_COLORS;
 
-	$: cssVarStyles = `--color-primary:${styling.colorPrimary}; --color-secondary:${styling.colorSecondary}; --color-secondary-50:${styling.colorSecondary50}; --color-tertiary:${styling.colorTertiary}; --color-tertiary-30:${styling.colorTertiary30}`;
+	selectedColorsStore.subscribe((value) => (styling = value));
 
-	let colorOptions = [
-		{
-			name: 'Primary',
-			color: '#006D77',
-			update: (event: Event) => {
-				const newColor = (event?.target as HTMLInputElement)?.value;
-				styling.colorPrimary = newColor;
-			}
-		},
-		{
-			name: 'Secondary',
-			color: '#9DC5BB',
-			update: (event: Event) => {
-				const newColor = (event?.target as HTMLInputElement)?.value;
-				styling.colorSecondary = newColor;
-				styling.colorSecondary50 = newColor + '80';
-			}
-		},
-		{
-			name: 'Tertiary',
-			color: '#ca8a04',
-			update: (event: Event) => {
-				const newColor = (event?.target as HTMLInputElement)?.value;
-				styling.colorTertiary = newColor;
-				styling.colorTertiary30 = newColor + '4D';
-			}
-		}
-	];
+	$: cssVarStyles = `--color-primary:${styling.colorPrimary}; --color-secondary:${styling.colorSecondary}; --color-secondary-50:${styling.colorSecondary50}; --color-tertiary:${styling.colorTertiary}; --color-tertiary-50:${styling.colorTertiary50}`;
 
 	let mobileDropdownActive = false;
 	let colorModalVisible = false;
+	let savedColorsModalVisible = false;
 
 	let menuOptions = [
 		{ url: '/', name: 'Home' },
-		{ url: '', name: 'About' },
+		{ url: '/about', name: 'About' },
 		{ url: '/work', name: 'Work' },
-		{ url: '', name: 'Blog' },
-		{ url: '', name: 'Mailing list' },
-		{ url: '', name: 'Contact' }
+		{ url: '', name: 'Blog' }
 	];
 </script>
 
@@ -105,11 +75,16 @@
 		</nav>
 	</header>
 	<slot />
+	<footer class="p-4 text-gray-100 primary-background text-center">
+		<p>Reach out via:</p>
+		<a href="mailto:janicesaji8@gmail.com" class="underline">Email</a> |
+		<a href="https://www.linkedin.com/in/janice-saji-72029b202" class="underline">LinkedIn</a>
+	</footer>
 	<button
 		on:click={() => {
 			colorModalVisible = true;
 		}}
-		class="fixed bottom-12 right-12 bg-yellow-600 hover:bg-yellow-700 p-1 w-10 h-10"
+		class="fixed bottom-12 right-12 tertiary-background hover-tertiary-background-50 p-1 w-10 h-10"
 	>
 		<svg fill="#fff" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"
 			><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g
@@ -125,59 +100,6 @@
 		>
 	</button>
 
-	<div
-		class="{colorModalVisible
-			? ''
-			: 'hidden'} bg-white shadow-lg shadow-black my-auto p-2 min-w-64 fixed bottom-3 right-3"
-	>
-		<div class="p-3">
-			<p>Select colors</p>
-			<button
-				on:click={() => {
-					colorModalVisible = false;
-				}}
-				class="absolute right-5 top-5 w-8 h-8"
-			>
-				<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
-					><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g
-						id="SVGRepo_tracerCarrier"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-					></g><g id="SVGRepo_iconCarrier">
-						<path
-							d="M8.00191 9.41621C7.61138 9.02569 7.61138 8.39252 8.00191 8.002C8.39243 7.61147 9.0256 7.61147 9.41612 8.002L12.0057 10.5916L14.5896 8.00771C14.9801 7.61719 15.6133 7.61719 16.0038 8.00771C16.3943 8.39824 16.3943 9.0314 16.0038 9.42193L13.4199 12.0058L16.0039 14.5897C16.3944 14.9803 16.3944 15.6134 16.0039 16.004C15.6133 16.3945 14.9802 16.3945 14.5896 16.004L12.0057 13.42L9.42192 16.0038C9.03139 16.3943 8.39823 16.3943 8.00771 16.0038C7.61718 15.6133 7.61718 14.9801 8.00771 14.5896L10.5915 12.0058L8.00191 9.41621Z"
-							fill="#0F0F0F"
-						></path>
-						<path
-							fill-rule="evenodd"
-							clip-rule="evenodd"
-							d="M23 4C23 2.34315 21.6569 1 20 1H4C2.34315 1 1 2.34315 1 4V20C1 21.6569 2.34315 23 4 23H20C21.6569 23 23 21.6569 23 20V4ZM21 4C21 3.44772 20.5523 3 20 3H4C3.44772 3 3 3.44772 3 4V20C3 20.5523 3.44772 21 4 21H20C20.5523 21 21 20.5523 21 20V4Z"
-							fill="#0F0F0F"
-						></path>
-					</g></svg
-				>
-			</button>
-		</div>
-		<hr />
-		<div class="p-3">
-			{#each colorOptions as option}
-				<div class="flex justify-between items-center">
-					<p>{option.name}</p>
-					<input
-						type="color"
-						class="p-1 h-10 w-14 block bg-white border border-gray-200 cursor-pointer rounded-lg disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700"
-						id="hs-color-input"
-						value={option.color}
-						on:input={option.update}
-						title="Choose your color"
-					/>
-				</div>
-			{/each}
-		</div>
-		<hr />
-		<div class="p-3 flex justify-between">
-			<button class="border-black border-2 px-2 py-1">Preset</button>
-			<button class="border-black border-2 px-2 py-1">Save</button>
-		</div>
-	</div>
+	<ColorModal bind:colorModalVisible bind:savedColorsModalVisible />
+	<SavedColorsModal bind:savedColorsModalVisible />
 </div>

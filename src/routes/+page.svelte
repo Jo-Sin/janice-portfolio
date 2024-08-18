@@ -1,23 +1,28 @@
-<script>
-	import { getContext } from 'svelte';
-
-	const styling = getContext('styling');
-</script>
-
 <main class="md:flex">
 	<div class="md:w-1/2 md:h-[calc(100vh-96px)]">
-		<img src="/cat.jpg" alt="hero" class="w-full h-full object-cover" />
+		<img src="/home-girl.webp" alt="hero" class="w-full h-full object-cover" />
 	</div>
 	<div
-		class="secondary-background md:w-1/2 md:h-[calc(100vh-96px)] flex flex-col justify-center p-12 text-gray-800"
+		class="secondary-background md:w-1/2 md:h-[calc(100vh-96px)] flex flex-col gap-4 justify-center p-12 primary-font"
 	>
-		<h1 class="text-4xl font-bold tertiary-font">Hi! I'm Janice Saji</h1>
-		<p class="my-8 text-lg font-bold primary-font">
-			I’m a designer & lettering artist with a knack for marketing who loves helping creatives and
-			brands get more eyes on their work.
+		<p>Knock, knock</p>
+		<p class="italic">Who’s there?</p>
+		<p>Imagine</p>
+		<p class="italic">Imagine who?</p>
+		<p>
+			Imagine you not having to worry about an article because I always deliver perfection (I live
+			for professional validation).
 		</p>
-		<button class="tertiary-background hover:bg-yellow-700 text-white py-3.5 px-7 w-max"
-			>Find out more</button
+		<a
+			href="/about"
+			class="tertiary-background hover-tertiary-background-50 text-white py-3.5 px-7 w-max mt-6"
+			>Find out more</a
 		>
 	</div>
 </main>
+
+<style>
+	p {
+		@apply text-lg font-bold;
+	}
+</style>
