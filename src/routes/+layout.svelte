@@ -19,9 +19,7 @@
 		{ url: '/', name: 'Home' },
 		{ url: '/about', name: 'About' },
 		{ url: '/work', name: 'Work' },
-		{ url: '', name: 'Blog' },
-		{ url: '', name: 'Mailing list' },
-		{ url: '', name: 'Contact' }
+		{ url: '', name: 'Blog' }
 	];
 </script>
 
@@ -77,6 +75,11 @@
 		</nav>
 	</header>
 	<slot />
+	<footer class="p-4 text-gray-100 primary-background text-center">
+		<p>Reach out via:</p>
+		<a href="mailto:janicesaji8@gmail.com" class="underline">Email</a> |
+		<a href="https://www.linkedin.com/in/janice-saji-72029b202" class="underline">LinkedIn</a>
+	</footer>
 	<button
 		on:click={() => {
 			colorModalVisible = true;
